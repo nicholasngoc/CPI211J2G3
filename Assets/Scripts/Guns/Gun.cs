@@ -11,14 +11,15 @@ public class Gun : MonoBehaviour
     public float fireRate;
     public float bulletSpeed;
 
-    
-
-    public void Shoot()
+    public virtual void Shoot()
     {
-        GameObject bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
+        for(int x = 0; x < bulletCount; x++)
+        {
+            GameObject bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
 
-        Rigidbody rb = bullet.GetComponent<Rigidbody>();
-        if (rb != null)
-            rb.AddForce(bulletSpawnPoint.forward * bulletSpeed);
+            Rigidbody rb = bullet.GetComponent<Rigidbody>();
+            if (rb != null)
+                rb.AddForce(bulletSpawnPoint.forward * bulletSpeed);
+        }
     }
 }

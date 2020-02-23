@@ -338,7 +338,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e33258ac09d19234fba2f191bbee7191, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gun: {fileID: 6658749911576515524, guid: 2185f52a7b0438049bc55f31ac75de88, type: 3}
+  gunSelection:
+  - {fileID: 6658749911576515524, guid: 2185f52a7b0438049bc55f31ac75de88, type: 3}
+  - {fileID: 8656084177698534590, guid: c91324f72331de546a6a741a12598b3e, type: 3}
   bulletSpawnPoint: {fileID: 3460513407133458869}
 --- !u!1 &3460513407133458870
 GameObject:

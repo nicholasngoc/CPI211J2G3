@@ -4,21 +4,49 @@ using UnityEngine;
 
 public class GunController : MonoBehaviour
 {
-    public Gun gun;
+    public Gun[] gunSelection;
+    private int _currentGun = 0;
     public Transform bulletSpawnPoint;
+
+    private bool _canShoot = true;
 
     private void Start()
     {
-        gun.bulletSpawnPoint = bulletSpawnPoint;
+        foreach(Gun gun in gunSelection)
+        {
+            gun.bulletSpawnPoint = bulletSpawnPoint;
+        }
     }
 
     private void Update()
     {
-        transform.localScale = transform.localScale;
-
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButton(0) && _canShoot)
         {
-            gun.Shoot();
+            gunSelection[_currentGun].Shoot();
+            StartCoroutine(ShootDelay(gunSelection[_currentGun].fireRate));
         }
+
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            _currentGun++;
+
+            if(_currentGun > gunSelection.Length - 1)
+            {
+                _currentGun = 0;
+            }
+
+            print("Current Gun = " + _currentGun);
+        }
+    }
+
+    private IEnumerator ShootDelay(float delay)
+    {
+        _canShoot = false;
+
+        yield return new WaitForSeconds(delay);
+
+        _canShoot = true;
+
+        yield return null;
     }
 }

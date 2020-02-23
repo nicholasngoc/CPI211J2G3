@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// General class that describes a gun. Meant to be inherited
+/// to a child if a different style of gun is needed
+/// </summary>
 public class Gun : MonoBehaviour
 {
     public Transform bulletSpawnPoint;

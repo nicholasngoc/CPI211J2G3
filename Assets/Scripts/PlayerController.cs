@@ -43,6 +43,7 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        //Queues a jump to occur for FixedUpdate
         if (Input.GetKeyDown(KeyCode.Space) && _jumpCount < totalJumps)
         {
             _addJump++;
@@ -53,6 +54,10 @@ public class PlayerController : MonoBehaviour
         MovementControl();
     }
 
+    /// <summary>
+    /// Resets the jump counter when touching the ground
+    /// </summary>
+    /// <param name="collision"></param>
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
@@ -61,6 +66,7 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        //I thought I heard Physics was better in fixed update so I put it here instead of normal update
         JumpControl();
     }
 

@@ -110,7 +110,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3460513405986507517}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.81, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3460513406487155711}
@@ -133,7 +133,8 @@ MonoBehaviour:
   playerCam: {fileID: 3460513405727115863}
   lookSensitivity: 180
   maxVerticalAngle: 60
-  movementSpeed: 25
+  baseMovementSpeed: 20
+  sprintSpeed: 10
   totalJumps: 3
   jumpForce: 400
 --- !u!54 &3460513405986507515

@@ -49,5 +49,5 @@ MonoBehaviour:
   bulletCount: 10
   fireRate: 0.5
   bulletSpeed: 3500
-  spreadModifier: 0.1
-  radius: 1
+  forceModifier: 0.25
+  initRadius: 0.5

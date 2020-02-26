@@ -21,7 +21,9 @@ public class PlayerController : MonoBehaviour
     [Header("Movement and Looking")]
     public float lookSensitivity = 1f;
     public float maxVerticalAngle = 60f;
-    public float movementSpeed = 180f;
+    private float _movementSpeed;
+    public float baseMovementSpeed;
+    public float sprintSpeed;
 
     [Header("Jumping")]
     public int totalJumps;   //How many times the player can jump before resetting
@@ -112,14 +114,23 @@ public class PlayerController : MonoBehaviour
         float hInput = Input.GetAxisRaw("Horizontal");
         float vInput = Input.GetAxisRaw("Vertical");
 
+        if(Input.GetKey(KeyCode.LeftShift))
+        {
+            _movementSpeed = baseMovementSpeed + sprintSpeed;
+        }
+        else
+        {
+            _movementSpeed = baseMovementSpeed;
+        }
+
         if (hInput != 0)
         {
-            transform.position += transform.right * Mathf.Sign(hInput) * movementSpeed * Time.deltaTime;
+            transform.position += transform.right * Mathf.Sign(hInput) * _movementSpeed * Time.deltaTime;
         }
 
         if (vInput != 0)
         {
-            transform.position += transform.forward * Mathf.Sign(vInput) * movementSpeed * Time.deltaTime;
+            transform.position += transform.forward * Mathf.Sign(vInput) * _movementSpeed * Time.deltaTime;
         }
     }
 

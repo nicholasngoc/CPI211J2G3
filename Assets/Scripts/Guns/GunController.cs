@@ -11,10 +11,12 @@ public class GunController : MonoBehaviour
     public PlayerController playerController;
     public Transform cameraTransform;
 
+    [Header("Gun and Bullet Stuff")]
     public Gun[] gunSelection;  //Array of guns that can be swapped to
     private int _currentGun = 0;    //Index used for gunSelection to determine which gun we are using
     public Transform bulletSpawnPoint;  //Reference obj for where the bullets will spawn
 
+    [Header("Recoil")]
     private float _currentRecoilAngle;
     public float recoilRecover; //This modifies how fast the player recovers from the recoil shot
     private bool _canShoot = true;

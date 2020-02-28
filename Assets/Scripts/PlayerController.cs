@@ -167,8 +167,13 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Coroutine that handles the player's head bobbing up and down
+    /// </summary>
+    /// <returns></returns>
     private IEnumerator HeadBobControl()
     {
+        //This lowers the players head
         while(playerCam.transform.localPosition.y > -bobHeight)
         {
             float useSpeed = bobSpeed;
@@ -183,6 +188,7 @@ public class PlayerController : MonoBehaviour
             yield return new WaitForEndOfFrame();
         }
 
+        //This raises the head back up
         while(playerCam.transform.localPosition.y < _originalHeight.y)
         {
             float useSpeed = bobSpeed;

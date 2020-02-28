@@ -35,20 +35,22 @@ public class GunController : MonoBehaviour
             gunSelection[_currentGun].Shoot();
             StartCoroutine(ShootDelay(gunSelection[_currentGun].fireRate));
 
+            //Disabled parts of the recoil system
             //If to make sure the recoil won't go over the set max vertical angle
-            if (Mathf.Abs(cameraTransform.eulerAngles.x - _currentRecoilAngle) < playerController.maxVerticalAngle || Mathf.Abs(cameraTransform.eulerAngles.x - _currentRecoilAngle) > 360 - playerController.maxVerticalAngle)
-            {
-                _currentRecoilAngle += gunSelection[_currentGun].recoilAngle;
-                cameraTransform.eulerAngles -= new Vector3(_currentRecoilAngle, 0, 0);
-            }
+            //if (Mathf.Abs(cameraTransform.eulerAngles.x - _currentRecoilAngle) < playerController.maxVerticalAngle || Mathf.Abs(cameraTransform.eulerAngles.x - _currentRecoilAngle) > 360 - playerController.maxVerticalAngle)
+            //{
+            //    _currentRecoilAngle += gunSelection[_currentGun].recoilAngle;
+            //    cameraTransform.eulerAngles -= new Vector3(_currentRecoilAngle, 0, 0);
+            //}
         }
 
+        //Disabled parts of the recoil system
         //This block handles recoil recovery
-        if(_currentRecoilAngle > 0)
-        {
-            cameraTransform.eulerAngles += new Vector3(recoilRecover, 0, 0);
-            _currentRecoilAngle -= recoilRecover;
-        }
+        //if(_currentRecoilAngle > 0)
+        //{
+        //    cameraTransform.eulerAngles += new Vector3(recoilRecover, 0, 0);
+        //    _currentRecoilAngle -= recoilRecover;
+        //}
 
         //Switches the gun by pressing Q. Can be changed
         if (Input.GetKeyDown(KeyCode.Q))

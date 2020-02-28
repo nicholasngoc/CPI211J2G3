@@ -135,6 +135,10 @@ MonoBehaviour:
   maxVerticalAngle: 60
   baseMovementSpeed: 20
   sprintSpeed: 10
+  isSprinting: 0
+  bobSpeed: 2
+  sprintBobSpeed: 2.5
+  bobHeight: 0.4
   totalJumps: 3
   jumpForce: 400
 --- !u!54 &3460513405986507515
@@ -339,10 +343,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e33258ac09d19234fba2f191bbee7191, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerController: {fileID: 3460513405986507514}
+  cameraTransform: {fileID: 3460513405727115862}
   gunSelection:
   - {fileID: 6658749911576515524, guid: 2185f52a7b0438049bc55f31ac75de88, type: 3}
   - {fileID: 8656084177698534590, guid: c91324f72331de546a6a741a12598b3e, type: 3}
   bulletSpawnPoint: {fileID: 3460513407133458869}
+  recoilRecover: 0
 --- !u!1 &3460513407133458870
 GameObject:
   m_ObjectHideFlags: 0

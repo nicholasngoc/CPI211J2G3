@@ -24,6 +24,14 @@ public class PlayerController : MonoBehaviour
     private float _movementSpeed;
     public float baseMovementSpeed;
     public float sprintSpeed;
+    public bool isSprinting;
+
+    [Header("Head Bobbing")]
+    public float bobSpeed;
+    public float sprintBobSpeed;
+    public float bobHeight; //This modifies how far the player dips his head during the bob
+    private Vector3 _originalHeight;
+    private IEnumerator _bobRoutine;
 
     [Header("Jumping")]
     public int totalJumps;   //How many times the player can jump before resetting
@@ -41,6 +49,8 @@ public class PlayerController : MonoBehaviour
     {
         _jumpCount = 0;
         _addJump = 0;
+
+        _originalHeight = playerCam.transform.localPosition;
     }
 
     private void Update()
@@ -117,10 +127,12 @@ public class PlayerController : MonoBehaviour
         if(Input.GetKey(KeyCode.LeftShift))
         {
             _movementSpeed = baseMovementSpeed + sprintSpeed;
+            isSprinting = true;
         }
         else
         {
             _movementSpeed = baseMovementSpeed;
+            isSprinting = false;
         }
 
         if (hInput != 0)
@@ -131,6 +143,12 @@ public class PlayerController : MonoBehaviour
         if (vInput != 0)
         {
             transform.position += transform.forward * Mathf.Sign(vInput) * _movementSpeed * Time.deltaTime;
+
+            if (_bobRoutine == null)
+            {
+                _bobRoutine = HeadBobControl();
+                StartCoroutine(_bobRoutine);
+            }
         }
     }
 
@@ -147,5 +165,42 @@ public class PlayerController : MonoBehaviour
             Rb.AddForce(transform.up * jumpForce);
             _addJump--;
         }
+    }
+
+    private IEnumerator HeadBobControl()
+    {
+        while(playerCam.transform.localPosition.y > -bobHeight)
+        {
+            float useSpeed = bobSpeed;
+
+            if(isSprinting)
+            {
+                useSpeed = sprintBobSpeed;
+            }
+
+            playerCam.transform.localPosition -= new Vector3(0, useSpeed * Time.deltaTime, 0);
+
+            yield return new WaitForEndOfFrame();
+        }
+
+        while(playerCam.transform.localPosition.y < _originalHeight.y)
+        {
+            float useSpeed = bobSpeed;
+
+            if (isSprinting)
+            {
+                useSpeed = sprintBobSpeed;
+            }
+
+            playerCam.transform.localPosition += new Vector3(0, useSpeed * Time.deltaTime, 0);
+
+            yield return new WaitForEndOfFrame();
+        }
+
+        playerCam.transform.localPosition = _originalHeight;
+
+        _bobRoutine = null;
+
+        yield return null;
     }
 }

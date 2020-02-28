@@ -14,6 +14,7 @@ public class Gun : MonoBehaviour
     public int bulletCount;
     public float fireRate;
     public float bulletSpeed;
+    public float recoilAngle;   //This is the angle added to the player camera when the gun is shot
 
     public virtual void Shoot()
     {

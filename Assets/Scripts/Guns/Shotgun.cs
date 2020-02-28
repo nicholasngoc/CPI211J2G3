@@ -18,7 +18,8 @@ public class Shotgun : Gun
             float randRadius = Random.Range(0, initRadius);
             float randAngle = Random.Range(0, Mathf.PI * 2);
 
-            Vector3 spawnPos = bulletSpawnPoint.position + new Vector3(randRadius * Mathf.Cos(randAngle), randRadius * Mathf.Sin(randAngle), 0);
+            //Spawns bullet within a circle around the bullet spawn point
+            Vector3 spawnPos = bulletSpawnPoint.position + (bulletSpawnPoint.right * (randRadius * Mathf.Cos(randAngle))) + (bulletSpawnPoint.up * (randRadius * Mathf.Sin(randAngle)));
 
             GameObject bullet = Instantiate(bulletPrefab, spawnPos, bulletSpawnPoint.rotation);
 

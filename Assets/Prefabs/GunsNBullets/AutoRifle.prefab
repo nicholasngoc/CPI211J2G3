@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3029610876942509023}
   - component: {fileID: 6658749911576515524}
   m_Layer: 0
-  m_Name: TestGun
+  m_Name: AutoRifle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -49,3 +49,4 @@ MonoBehaviour:
   bulletCount: 1
   fireRate: 0.1
   bulletSpeed: 5000
+  recoilAngle: 2

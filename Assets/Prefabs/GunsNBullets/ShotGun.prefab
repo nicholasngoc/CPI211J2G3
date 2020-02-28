@@ -50,5 +50,5 @@ MonoBehaviour:
   fireRate: 2
   bulletSpeed: 3500
   recoilAngle: 25
-  forceModifier: 0.25
-  initRadius: 0.5
+  forceModifier: 0.1
+  initRadius: 1

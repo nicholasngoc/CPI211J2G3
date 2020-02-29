@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 /// <summary>
 /// This controls the firing of guns and which gun
@@ -21,18 +22,22 @@ public class GunController : MonoBehaviour
     public float recoilRecover; //This modifies how fast the player recovers from the recoil shot
     private bool _canShoot = true;
 
+    [Header("UI")]
+    public Text ammoText;
+
     private void Start()
     {
         foreach(Gun gun in gunSelection)
         {
             gun.bulletSpawnPoint = bulletSpawnPoint;
+            gun.Reload();
         }
     }
 
     private void Update()
     {
-        //Fires on left click
-        if (Input.GetMouseButton(0) && _canShoot)
+        //Fires on left click. Gun must have bullets in clip
+        if (Input.GetMouseButton(0) && _canShoot && gunSelection[_currentGun].clipCount > 0)
         {
             gunSelection[_currentGun].Shoot();
             StartCoroutine(ShootDelay(gunSelection[_currentGun].fireRate));
@@ -63,9 +68,16 @@ public class GunController : MonoBehaviour
             {
                 _currentGun = 0;
             }
-
-            print("Current Gun = " + _currentGun);
         }
+
+        //Reloads gun on R
+        if(Input.GetKeyDown(KeyCode.R))
+        {
+            gunSelection[_currentGun].Reload();
+        }
+
+        if(ammoText != null)
+            ammoText.text = string.Format("Ammo: {0}/{1}", gunSelection[_currentGun].clipCount, gunSelection[_currentGun].maxBullets);
     }
 
     /// <summary>

@@ -16,15 +16,31 @@ public class Gun : MonoBehaviour
     public float bulletSpeed;
     public float recoilAngle;   //This is the angle added to the player camera when the gun is shot
 
+    public int maxBullets;
+    public int clipCount;
+
     public virtual void Shoot()
     {
-        for(int x = 0; x < bulletCount; x++)
+        if(clipCount > 0)
         {
-            GameObject bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
+            for (int x = 0; x < bulletCount; x++)
+            {
+                GameObject bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
 
-            Rigidbody rb = bullet.GetComponent<Rigidbody>();
-            if (rb != null)
-                rb.AddForce(bulletSpawnPoint.forward * bulletSpeed);
+                Rigidbody rb = bullet.GetComponent<Rigidbody>();
+                if (rb != null)
+                    rb.AddForce(bulletSpawnPoint.forward * bulletSpeed);
+            }
+
+            clipCount--;
         }
+    }
+
+    /// <summary>
+    /// Method that simply reloads the gun
+    /// </summary>
+    public virtual void Reload()
+    {
+        clipCount = maxBullets;
     }
 }

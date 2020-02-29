@@ -14,6 +14,7 @@ public class GunController : MonoBehaviour
 
     [Header("Gun and Bullet Stuff")]
     public Gun[] gunSelection;  //Array of guns that can be swapped to
+    public GameObject[] gunModels;
     private int _currentGun = 0;    //Index used for gunSelection to determine which gun we are using
     public Transform bulletSpawnPoint;  //Reference obj for where the bullets will spawn
 
@@ -68,6 +69,13 @@ public class GunController : MonoBehaviour
             {
                 _currentGun = 0;
             }
+
+            foreach(GameObject gun in gunModels)
+            {
+                gun.SetActive(false);
+            }
+
+            gunModels[_currentGun].SetActive(true);
         }
 
         //Reloads gun on R

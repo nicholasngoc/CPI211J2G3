@@ -140,7 +140,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentTarget: {fileID: 0}
-  redirectDelay: 0
+  redirectDelay: 1
 --- !u!195 &-236942905510385533
 NavMeshAgent:
   m_ObjectHideFlags: 0

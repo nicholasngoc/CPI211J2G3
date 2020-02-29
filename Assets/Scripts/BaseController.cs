@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Simple class that keeps track of the base's health and displays it on a slider
+/// </summary>
 public class BaseController : MonoBehaviour
 {
     public int health;

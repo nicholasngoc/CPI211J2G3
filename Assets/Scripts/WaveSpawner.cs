@@ -29,6 +29,9 @@ public class WaveSpawner : MonoBehaviour
     public List<GameObject> spawnedEnemies;   //List of currently spawned enemies
     public int spawnRate;
 
+    [Header("Misc")]
+    public GameObject playerObj;
+
     private void Start()
     {
         StartWave();
@@ -67,6 +70,7 @@ public class WaveSpawner : MonoBehaviour
             spawnedEnemies.Add(newEnemy);
             enemySpawnedCount++;
             newEnemy.GetComponent<EnemyHealth>().spawner = this;
+            newEnemy.GetComponent<SimpleAI>().currentTarget = playerObj.transform;
 
             yield return new WaitForSeconds(spawnRate);
         }

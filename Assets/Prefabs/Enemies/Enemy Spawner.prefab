@@ -47,6 +47,14 @@ MonoBehaviour:
   spawnLocationParent: {fileID: 0}
   timeBetweenWaves: 5
   enemyPrefabs:
-  - {fileID: 6567074861218922858, guid: 3d2d331093860e04c894655c65b07e70, type: 3}
+  - {fileID: 398221895742482702, guid: 4f106d96990426f43bde94c5f5c9c3dd, type: 3}
+  - {fileID: 4316639743891968771, guid: bc6da90f26120894096baf03d91a0cbe, type: 3}
+  - {fileID: 977423024026629827, guid: fb0ffd92cce464a498537c98e40f7855, type: 3}
+  - {fileID: 9060332866381527270, guid: 9c0e4079b4dff2a448c2b68706f7d733, type: 3}
+  - {fileID: 6783415560622034388, guid: ac072d1cd5bb40c4caccd1426c39f765, type: 3}
+  - {fileID: 7804293171202055832, guid: 56a57e952080ec148ae9de04885933d4, type: 3}
+  - {fileID: 8107057470000862050, guid: 3eab318fb4ebe6b4cb97a7ecf5b76ff3, type: 3}
+  - {fileID: 1271334570194257270, guid: d2b70d98df7854740bbb15691a1e1fc8, type: 3}
   spawnedEnemies: []
   spawnRate: 1
+  playerObj: {fileID: 0}

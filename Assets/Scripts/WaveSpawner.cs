@@ -31,6 +31,9 @@ public class WaveSpawner : MonoBehaviour
 
     [Header("Misc")]
     public GameObject playerObj;
+    public float playerTargetChance;
+    public GameObject baseObj;
+    public float baseTargetChance;
 
     private void Start()
     {
@@ -70,7 +73,13 @@ public class WaveSpawner : MonoBehaviour
             spawnedEnemies.Add(newEnemy);
             enemySpawnedCount++;
             newEnemy.GetComponent<EnemyHealth>().spawner = this;
-            newEnemy.GetComponent<SimpleAI>().currentTarget = playerObj.transform;
+
+            float randChance = Random.Range(0, playerTargetChance + baseTargetChance);
+
+            if (randChance < playerTargetChance)
+                newEnemy.GetComponent<SimpleAI>().currentTarget = playerObj.transform;
+            else
+                newEnemy.GetComponent<SimpleAI>().currentTarget = baseObj.transform;
 
             yield return new WaitForSeconds(spawnRate);
         }

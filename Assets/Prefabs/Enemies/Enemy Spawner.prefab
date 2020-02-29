@@ -43,7 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 190fb69a050ba2d4a912b8a072eb3c40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waves: 0300000007000000
+  waves: 0f00000007000000
   spawnLocationParent: {fileID: 0}
   timeBetweenWaves: 5
   enemyPrefabs:
@@ -58,3 +58,6 @@ MonoBehaviour:
   spawnedEnemies: []
   spawnRate: 1
   playerObj: {fileID: 0}
+  playerTargetChance: 75
+  baseObj: {fileID: 0}
+  baseTargetChance: 25

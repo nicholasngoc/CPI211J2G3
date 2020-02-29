@@ -11,13 +11,14 @@ GameObject:
   - component: {fileID: 8107057470000828226}
   - component: {fileID: 8107057470002155362}
   - component: {fileID: 8107057470003121570}
-  - component: {fileID: 3063227769933181580}
+  - component: {fileID: -3937938421753303860}
+  - component: {fileID: -3009646753942384878}
   - component: {fileID: 7323301954673471966}
   - component: {fileID: 8874745461131894466}
   - component: {fileID: 1390665370059838463}
   m_Layer: 0
   m_Name: Orange Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -83,7 +84,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &3063227769933181580
+--- !u!64 &-3937938421753303860
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -94,9 +95,25 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: f889d6e3d71e9c54eaf07783b7e5348c, type: 3}
+--- !u!54 &-3009646753942384878
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8107057470000862050}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!195 &7323301954673471966
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -147,3 +164,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentTarget: {fileID: 0}
   redirectDelay: 1
+  baseDamageDelayTime: 1

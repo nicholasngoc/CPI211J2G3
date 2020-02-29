@@ -13,6 +13,8 @@ public class EnemyHealth : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        print(collision.gameObject.name);
+
         //If hit by a bullet and I am out of health kill me
         if(collision.gameObject.CompareTag("Bullet"))
         {

@@ -100,6 +100,7 @@ MonoBehaviour:
   - {fileID: 8656084177698534590, guid: c91324f72331de546a6a741a12598b3e, type: 3}
   bulletSpawnPoint: {fileID: 1316252606}
   recoilRecover: 0
+  ammoText: {fileID: 0}
 --- !u!1 &1316252605
 GameObject:
   m_ObjectHideFlags: 0
@@ -143,6 +144,8 @@ GameObject:
   - component: {fileID: 6251624822133567956}
   - component: {fileID: 6251624822140741460}
   - component: {fileID: 6251624822138854868}
+  - component: {fileID: 7010723150436418129}
+  - component: {fileID: 7293420016660082600}
   m_Layer: 0
   m_Name: Player 2.0
   m_TagString: Untagged
@@ -419,6 +422,35 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &7010723150436418129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6251624822143796276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe0e332afc83832469f85792c205496a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 10
+  damageDelay: 2
+  healthSlider: {fileID: 0}
+--- !u!136 &7293420016660082600
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6251624822143796276}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6251624822143796278
 GameObject:
   m_ObjectHideFlags: 0

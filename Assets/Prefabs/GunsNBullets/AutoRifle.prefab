@@ -50,3 +50,5 @@ MonoBehaviour:
   fireRate: 0.1
   bulletSpeed: 2000
   recoilAngle: 2
+  maxBullets: 24
+  clipCount: 0

@@ -18,9 +18,47 @@ public class SimpleAI : MonoBehaviour
     public Transform currentTarget;
     public float redirectDelay;
 
+    [Header("Base Damage")]
+    private IEnumerator _baseDamageDelayRoutine;
+    public float baseDamageDelayTime;
+
+    private void Awake()
+    {
+        _baseDamageDelayRoutine = null;
+    }
+
     private void Start()
     {
         StartCoroutine(RedirectRoutine());
+    }
+
+    /// <summary>
+    /// Damages the base if they are colliding and the damage delay
+    /// is not active
+    /// </summary>
+    /// <param name="collision"></param>
+    private void OnCollisionStay(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Base") && _baseDamageDelayRoutine == null)
+        {
+            collision.gameObject.GetComponent<BaseController>().health--;
+
+            _baseDamageDelayRoutine = BaseDamagDelay();
+            StartCoroutine(_baseDamageDelayRoutine);
+        }
+    }
+
+    /// <summary>
+    /// Coroutine that adds a delay to the enemy damaging the base
+    /// </summary>
+    /// <returns></returns>
+    private IEnumerator BaseDamagDelay()
+    {
+        yield return new WaitForSeconds(baseDamageDelayTime);
+
+        _baseDamageDelayRoutine = null;
+
+        yield return null;
     }
 
     /// <summary>

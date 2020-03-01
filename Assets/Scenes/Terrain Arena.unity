@@ -586,7 +586,7 @@ PrefabInstance:
     - target: {fileID: 4741197856522653469, guid: eb7d1a434daf5b74c868a1d920ae8ece,
         type: 3}
       propertyPath: playerTargetChance
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4741197856522653469, guid: eb7d1a434daf5b74c868a1d920ae8ece,
         type: 3}
@@ -596,12 +596,12 @@ PrefabInstance:
     - target: {fileID: 4741197856522653469, guid: eb7d1a434daf5b74c868a1d920ae8ece,
         type: 3}
       propertyPath: spawnRate
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4741197856522653469, guid: eb7d1a434daf5b74c868a1d920ae8ece,
         type: 3}
       propertyPath: waves.Array.data[0]
-      value: 2
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 4741197856522653469, guid: eb7d1a434daf5b74c868a1d920ae8ece,
         type: 3}
@@ -2094,6 +2094,19 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1550602889}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &687452349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 687452348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2f7d84f9a9057c4c95e3b5aec27f4b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
 --- !u!1001 &699615535
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5340,6 +5353,10 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 124600, guid: 9ca868cc18bd0b24b9edaccd64049850, type: 3}
       propertyPath: m_Name
+      value: Base
+      objectReference: {fileID: 0}
+    - target: {fileID: 124600, guid: 9ca868cc18bd0b24b9edaccd64049850, type: 3}
+      propertyPath: m_TagString
       value: Base
       objectReference: {fileID: 0}
     - target: {fileID: 440944, guid: 9ca868cc18bd0b24b9edaccd64049850, type: 3}

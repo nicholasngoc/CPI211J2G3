@@ -58,6 +58,7 @@ public class WaveSpawner : MonoBehaviour
     /// <returns></returns>
     private IEnumerator WaveRoutine()
     {
+        GameObject.Find("PlayerUI").GetComponent<UIControl>().round = _currentWave + 1;
         int enemySpawnedCount = 0;
         spawnedEnemies = new List<GameObject>(waves[_currentWave]);
 

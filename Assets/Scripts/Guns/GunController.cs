@@ -23,9 +23,6 @@ public class GunController : MonoBehaviour
     public float recoilRecover; //This modifies how fast the player recovers from the recoil shot
     private bool _canShoot = true;
 
-    [Header("UI")]
-    public Text ammoText;
-
     private void Start()
     {
         foreach(Gun gun in gunSelection)
@@ -84,8 +81,9 @@ public class GunController : MonoBehaviour
             gunSelection[_currentGun].Reload();
         }
 
-        if(ammoText != null)
-            ammoText.text = string.Format("Ammo: {0}/{1}", gunSelection[_currentGun].clipCount, gunSelection[_currentGun].maxBullets);
+        GameObject.Find("PlayerUI").GetComponent<UIControl>().currentReload = gunSelection[_currentGun].clipCount;
+        GameObject.Find("PlayerUI").GetComponent<UIControl>().mag = gunSelection[_currentGun].maxBullets;
+        GameObject.Find("PlayerUI").GetComponent<UIControl>().currentGun = _currentGun;
     }
 
     /// <summary>

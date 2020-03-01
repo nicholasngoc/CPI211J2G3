@@ -14,18 +14,16 @@ public class PlayerHealth : MonoBehaviour
     private IEnumerator damageDelayRoutine;
     public float damageDelay;
 
-    [Header("UI")]
-    public Slider healthSlider;
-
     private void Awake()
     {
         _maxHealth = health;
+        GameObject.Find("PlayerUI").GetComponent<UIControl>().maxHealthPlayer = _maxHealth;
+        GameObject.Find("PlayerUI").GetComponent<UIControl>().currentHealthPlayer = health;
     }
 
     private void Update()
     {
-        if(healthSlider != null)
-            healthSlider.value = health / _maxHealth;
+        GameObject.FindGameObjectWithTag("HealthSlide").GetComponent<Slider>().value = health;
     }
 
     private void OnCollisionStay(Collision collision)

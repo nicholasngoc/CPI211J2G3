@@ -11,17 +11,15 @@ public class BaseController : MonoBehaviour
     public int health;
     private int _maxHealth;
 
-    [Header("UI")]
-    public Slider healthSlider;
-
     private void Awake()
     {
         _maxHealth = health;
+        GameObject.Find("PlayerUI").GetComponent<UIControl>().maxHealthBase = _maxHealth;
+        GameObject.Find("PlayerUI").GetComponent<UIControl>().currentHealthBase = health;
     }
 
     private void Update()
     {
-        if(healthSlider != null)
-            healthSlider.value = (float)health / (float)_maxHealth;
+        GameObject.FindGameObjectWithTag("BaseHealth").GetComponent<Slider>().value = health;
     }
 }

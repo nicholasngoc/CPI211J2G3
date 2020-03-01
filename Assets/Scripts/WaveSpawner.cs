@@ -77,9 +77,15 @@ public class WaveSpawner : MonoBehaviour
             //chooses a random target for the new enemy
             float randChance = Random.Range(0, playerTargetChance + baseTargetChance);
             if (randChance < playerTargetChance)
+            {
                 newEnemy.GetComponent<SimpleAI>().currentTarget = playerObj.transform;
+                newEnemy.GetComponent<CubeMove>().currentTarget = playerObj.transform;
+            }
             else
+            {
                 newEnemy.GetComponent<SimpleAI>().currentTarget = baseObj.transform;
+                newEnemy.GetComponent<CubeMove>().currentTarget = playerObj.transform;
+            }
 
             yield return new WaitForSeconds(spawnRate);
         }

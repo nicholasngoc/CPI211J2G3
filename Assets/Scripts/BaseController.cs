@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 /// <summary>
 /// Simple class that keeps track of the base's health and displays it on a slider
@@ -20,6 +21,10 @@ public class BaseController : MonoBehaviour
 
     private void Update()
     {
+        if (health <= 0.0)
+            {
+                SceneManager.LoadScene("GameOver");
+            }
         GameObject.FindGameObjectWithTag("BaseHealth").GetComponent<Slider>().value = health;
     }
 }

@@ -24,6 +24,8 @@ public class WaveSpawner : MonoBehaviour
     }
     public int timeBetweenWaves;
 
+    private Color newColor;
+
     [Header("Enemies Vars")]
     public GameObject[] enemyPrefabs;    //Array of prefabs that can be spawned
     public List<GameObject> spawnedEnemies;   //List of currently spawned enemies
@@ -39,6 +41,7 @@ public class WaveSpawner : MonoBehaviour
 
     private void Start()
     {
+        
         StartWave();
     }
 
@@ -47,9 +50,27 @@ public class WaveSpawner : MonoBehaviour
     /// </summary>
     public void StartWave()
     {
-        //Replaces this with proper UI later
-        print("Starting Wave " + (_currentWave + 1));
-
+        if (_currentWave == 1)
+        {
+            newColor = new Color(1f, 0.75f, 0.75f, 1f);
+            GameObject.Find("DirectionalLight").GetComponent<Light>().color = newColor;
+        }
+        else if (_currentWave == 2)
+        {
+            newColor = new Color(1f, 0.5f, 0.5f, 1f);
+            GameObject.Find("DirectionalLight").GetComponent<Light>().color = newColor;
+        }
+        else if (_currentWave == 3)
+        {
+            newColor = new Color(1f, 0.25f, 0.25f, 1f);
+            GameObject.Find("DirectionalLight").GetComponent<Light>().color = newColor;
+        }
+        else if (_currentWave == 4)
+        {
+            newColor = new Color(1f, 0f, 0f, 1f);
+            GameObject.Find("DirectionalLight").GetComponent<Light>().color = newColor;
+        }
+        
         StartCoroutine(WaveRoutine());
     }
 

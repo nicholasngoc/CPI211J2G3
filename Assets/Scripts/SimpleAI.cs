@@ -15,6 +15,9 @@ public class SimpleAI : MonoBehaviour
             return GetComponent<NavMeshAgent>();
         }
     }
+
+    public AudioClip baseDamage;
+    private AudioSource baseAudio;
     public Transform currentTarget;
     public float redirectDelay;
 
@@ -29,7 +32,9 @@ public class SimpleAI : MonoBehaviour
 
     private void Start()
     {
+        baseAudio = GetComponent<AudioSource>();
         StartCoroutine(RedirectRoutine());
+        baseAudio.clip = baseDamage;
     }
 
     /// <summary>
@@ -42,6 +47,7 @@ public class SimpleAI : MonoBehaviour
         if (collision.gameObject.CompareTag("Base") && _baseDamageDelayRoutine == null)
         {
             collision.gameObject.GetComponent<BaseController>().health--;
+            baseAudio.Play();
 
             _baseDamageDelayRoutine = BaseDamagDelay();
             StartCoroutine(_baseDamageDelayRoutine);

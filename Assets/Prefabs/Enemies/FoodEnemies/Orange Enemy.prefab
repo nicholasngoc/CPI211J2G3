@@ -149,6 +149,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a777bc341a28d846bf9a5756f636b31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  baseDamage: {fileID: 8300000, guid: ae96fe7e685a881469912ca4386eb693, type: 3}
   currentTarget: {fileID: 0}
   redirectDelay: 1
   baseDamageDelayTime: 1

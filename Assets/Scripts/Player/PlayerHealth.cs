@@ -12,11 +12,15 @@ public class PlayerHealth : MonoBehaviour
     public float health;
     private float _maxHealth;
 
+    public AudioClip playerDamage;
+    private AudioSource hurtAudio;
     private IEnumerator damageDelayRoutine;
     public float damageDelay;
 
     private void Awake()
     {
+        hurtAudio = GetComponent<AudioSource>();
+        hurtAudio.clip = playerDamage;
         _maxHealth = health;
         GameObject.Find("PlayerUI").GetComponent<UIControl>().maxHealthPlayer = _maxHealth;
         GameObject.Find("PlayerUI").GetComponent<UIControl>().currentHealthPlayer = health;
@@ -31,6 +35,7 @@ public class PlayerHealth : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Enemy") && damageDelayRoutine == null)
         {
+            hurtAudio.Play();
             health--;
 
             if (health <= 0.0)

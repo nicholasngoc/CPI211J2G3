@@ -15,8 +15,12 @@ public class GunController : MonoBehaviour
     [Header("Gun and Bullet Stuff")]
     public Gun[] gunSelection;  //Array of guns that can be swapped to
     public GameObject[] gunModels;
-    private int _currentGun = 0;    //Index used for gunSelection to determine which gun we are using
+    public int _currentGun = 0;    //Index used for gunSelection to determine which gun we are using
     public Transform bulletSpawnPoint;  //Reference obj for where the bullets will spawn
+
+    public AudioClip[] gunFire;
+
+    private AudioSource audio;
 
     [Header("Recoil")]
     private float _currentRecoilAngle;
@@ -25,6 +29,8 @@ public class GunController : MonoBehaviour
 
     private void Start()
     {
+        audio = GetComponent<AudioSource>();
+
         foreach(Gun gun in gunSelection)
         {
             gun.bulletSpawnPoint = bulletSpawnPoint;
@@ -38,6 +44,11 @@ public class GunController : MonoBehaviour
         if (Input.GetMouseButton(0) && _canShoot && gunSelection[_currentGun].clipCount > 0)
         {
             gunSelection[_currentGun].Shoot();
+            if (_currentGun == 1)
+            {
+                audio.clip = gunFire[_currentGun];
+                audio.Play();
+            }
             StartCoroutine(ShootDelay(gunSelection[_currentGun].fireRate));
 
             //Disabled parts of the recoil system
@@ -79,6 +90,8 @@ public class GunController : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.R))
         {
             gunSelection[_currentGun].Reload();
+            audio.clip = gunFire[2];
+            audio.Play();
         }
 
         GameObject.Find("PlayerUI").GetComponent<UIControl>().currentReload = gunSelection[_currentGun].clipCount;

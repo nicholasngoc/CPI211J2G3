@@ -26,7 +26,11 @@ public class Gun : MonoBehaviour
             for (int x = 0; x < bulletCount; x++)
             {
                 GameObject bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
-
+                if (GameObject.Find("Gun").GetComponent<GunController>()._currentGun == 0)
+                {
+                    bullet.GetComponent<AudioSource>().Play();
+                }
+                
                 Rigidbody rb = bullet.GetComponent<Rigidbody>();
                 if (rb != null)
                     rb.AddForce(bulletSpawnPoint.forward * bulletSpeed);

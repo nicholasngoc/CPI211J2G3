@@ -18,11 +18,14 @@ public class UIControl : MonoBehaviour
     public Color fullBaseCol;
     public Color minHealthCol;
     Text displayText;
+
+    public Text roundMessage;
     private string message;
     public int round;
     public int mag;
     public int currentReload;
     public int currentGun;
+    private int enemiesLeft;
     private Color nonAlph;
     private Color alph;
     // Start is called before the first frame update
@@ -31,6 +34,8 @@ public class UIControl : MonoBehaviour
         fill = GameObject.FindWithTag("HealthColor").GetComponent<Image>();
 
         displayText = GameObject.Find("AmmoText").GetComponent<Text>();
+
+        roundMessage = GameObject.Find("RoundMessage").GetComponent<Text>();
 
         GameObject.Find("Slider").GetComponent<Slider>().maxValue = maxHealthPlayer;
         GameObject.Find("BaseHealthSlide").GetComponent<Slider>().maxValue = maxHealthBase;
@@ -47,11 +52,14 @@ public class UIControl : MonoBehaviour
 
         currentHealthBase = GameObject.Find("BaseHealthSlide").GetComponent<Slider>().value;
 
+        enemiesLeft = GameObject.Find("EnemySpawnPoint").GetComponent<WaveSpawner>().spawnedEnemies.Count;
+
         baseFill.color = Color.Lerp(minHealthCol,fullBaseCol,(float)currentHealthBase/maxHealthBase);
         fill.color = Color.Lerp(minHealthCol,fullHealthCol,(float)currentHealthPlayer/maxHealthPlayer);
 
         message = "AMMO: " + currentReload.ToString() + "\\" + mag.ToString() 
-                +  "\n\nROUND: " + round.ToString();
+                +  "\n\nROUND: " + round.ToString()
+                +  "\n\nENEMIES LEFT: " + enemiesLeft.ToString();
         
         displayText.text = message;
 

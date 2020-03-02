@@ -35,6 +35,8 @@ public class WaveSpawner : MonoBehaviour
     public GameObject baseObj;
     public float baseTargetChance;  //Chance the enemy will target the base
 
+    private string message;
+
     private void Start()
     {
         StartWave();
@@ -104,7 +106,9 @@ public class WaveSpawner : MonoBehaviour
     private void OnWaveEnd()
     {
         //Replaces this with proper UI later
-        print("Wave " + (_currentWave + 1) + " has ended");
+        message = "Wave " + (_currentWave + 1).ToString() + " has ended.";
+        GameObject.Find("PlayerUI").GetComponent<UIControl>().roundMessage.text = message;
+        //print("Wave " + (_currentWave + 1) + " has ended");
 
         _currentWave++;
 
@@ -112,7 +116,9 @@ public class WaveSpawner : MonoBehaviour
             StartCoroutine(WaitNextRound());
         else
             //Replaces this with proper UI later
-            print("YOU WIN");
+            message = "The fruit menace has been destroyed! VICTORY!!!";
+            GameObject.Find("PlayerUI").GetComponent<UIControl>().roundMessage.text = message;
+            //print("YOU WIN");
     }
 
     /// <summary>
@@ -125,16 +131,21 @@ public class WaveSpawner : MonoBehaviour
     private IEnumerator WaitNextRound()
     {
         int count = 0;
+        yield return new WaitForSeconds(3);
         while(count < timeBetweenWaves)
         {
+            
             //Replaces this with proper UI later
-            print("Time till next wave: " + (timeBetweenWaves - count));
+            message = "Time till next wave: " + (timeBetweenWaves - count).ToString();
+            GameObject.Find("PlayerUI").GetComponent<UIControl>().roundMessage.text = message;
+            //print("Time till next wave: " + (timeBetweenWaves - count));
 
             count++;
 
             yield return new WaitForSeconds(1f);
         }
-
+        message = " ";
+        GameObject.Find("PlayerUI").GetComponent<UIControl>().roundMessage.text = message;
         StartWave();
     }
 }

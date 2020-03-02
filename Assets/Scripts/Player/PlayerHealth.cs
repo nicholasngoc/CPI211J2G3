@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 /// <summary>
 /// Simple class that handles the player's health
@@ -32,6 +33,10 @@ public class PlayerHealth : MonoBehaviour
         {
             health--;
 
+            if (health <= 0.0)
+            {
+                SceneManager.LoadScene("GameOver");
+            }
             damageDelayRoutine = DamageDelay();
             StartCoroutine(damageDelayRoutine);
         }

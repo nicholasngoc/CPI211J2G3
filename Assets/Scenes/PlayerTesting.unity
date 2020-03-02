@@ -645,6 +645,7 @@ MonoBehaviour:
   fullHealthCol: {r: 0.043001335, g: 0.9245283, b: 0, a: 1}
   fullBaseCol: {r: 0, g: 0.1387968, b: 1, a: 1}
   minHealthCol: {r: 0.8396226, g: 0, b: 0, a: 1}
+  roundMessage: {fileID: 0}
   round: 0
   mag: 0
   currentReload: 0
@@ -1708,6 +1709,31 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 653228457, guid: 15201729d54ae1b4088f128d6d0088e3, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 653228457, guid: 15201729d54ae1b4088f128d6d0088e3, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1786567426, guid: 15201729d54ae1b4088f128d6d0088e3, type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1989585365, guid: 15201729d54ae1b4088f128d6d0088e3, type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2061157258, guid: 15201729d54ae1b4088f128d6d0088e3, type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1056716650739623362, guid: 15201729d54ae1b4088f128d6d0088e3,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 5734757517852014399, guid: 15201729d54ae1b4088f128d6d0088e3,
         type: 3}
       propertyPath: m_TagString

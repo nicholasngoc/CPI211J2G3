@@ -11,11 +11,11 @@ GameObject:
   - component: {fileID: 7804293171202409144}
   - component: {fileID: 7804293171205276312}
   - component: {fileID: 7804293171204309080}
-  - component: {fileID: -1765025538126265155}
   - component: {fileID: -7263914134143446608}
   - component: {fileID: 198226432569453963}
   - component: {fileID: 7632119986334532078}
   - component: {fileID: 6885177805300004787}
+  - component: {fileID: 5444188366343370349}
   m_Layer: 0
   m_Name: Lemon Enemy
   m_TagString: Enemy
@@ -84,20 +84,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &-1765025538126265155
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7804293171202055832}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: c7babd0d9f849c9449d1c29e86f6245f, type: 3}
 --- !u!54 &-7263914134143446608
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -165,3 +151,17 @@ MonoBehaviour:
   currentTarget: {fileID: 0}
   redirectDelay: 1
   baseDamageDelayTime: 1
+--- !u!136 &5444188366343370349
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7804293171202055832}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.16
+  m_Height: 0.35354832
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}

@@ -11,11 +11,11 @@ GameObject:
   - component: {fileID: 1271334570194491734}
   - component: {fileID: 1271334570195261814}
   - component: {fileID: 1271334570196261814}
-  - component: {fileID: -980305074671932827}
   - component: {fileID: 3981296931224933502}
   - component: {fileID: 9167649799547240958}
   - component: {fileID: 9195266440380630209}
   - component: {fileID: 5667627594737541983}
+  - component: {fileID: 3787054522816618938}
   m_Layer: 0
   m_Name: Watermelon Enemy
   m_TagString: Enemy
@@ -84,20 +84,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &-980305074671932827
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1271334570194257270}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: d9b493bbd86ef3443a770a279d0426a9, type: 3}
 --- !u!54 &3981296931224933502
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -165,3 +151,16 @@ MonoBehaviour:
   currentTarget: {fileID: 0}
   redirectDelay: 1
   baseDamageDelayTime: 1
+--- !u!65 &3787054522816618938
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1271334570194257270}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5, y: 0.37493354, z: 0.15}
+  m_Center: {x: 0.000000014901161, y: 5.2939553e-23, z: -0.000000014901161}

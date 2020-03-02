@@ -11,11 +11,11 @@ GameObject:
   - component: {fileID: 9060332866381030598}
   - component: {fileID: 9060332866378163430}
   - component: {fileID: 9060332866379261478}
-  - component: {fileID: -75306724817211019}
   - component: {fileID: -1194147032007931734}
   - component: {fileID: 1879708770630001958}
   - component: {fileID: 8373195498013240440}
   - component: {fileID: 1715719368239844646}
+  - component: {fileID: 1673370023272583623}
   m_Layer: 0
   m_Name: Grape Enemy
   m_TagString: Enemy
@@ -84,20 +84,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &-75306724817211019
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9060332866381527270}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: 7b5ec5c57af98c349b22ae545a4a9fcd, type: 3}
 --- !u!54 &-1194147032007931734
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -165,3 +151,17 @@ MonoBehaviour:
   currentTarget: {fileID: 0}
   redirectDelay: 1
   baseDamageDelayTime: 1
+--- !u!136 &1673370023272583623
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9060332866381527270}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.18
+  m_Height: 0.44650897
+  m_Direction: 1
+  m_Center: {x: 0.00000022351742, y: -0.000000059604645, z: -2.1175824e-22}

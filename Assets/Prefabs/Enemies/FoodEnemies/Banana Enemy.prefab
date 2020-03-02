@@ -11,11 +11,11 @@ GameObject:
   - component: {fileID: 4316639743892000547}
   - component: {fileID: 4316639743894900483}
   - component: {fileID: 4316639743893900739}
-  - component: {fileID: 9218546304206367418}
   - component: {fileID: -5205467080939314246}
   - component: {fileID: 5360772939705412193}
   - component: {fileID: 2513988599137393744}
   - component: {fileID: -6376367813946832228}
+  - component: {fileID: 5164636512593572574}
   m_Layer: 0
   m_Name: Banana Enemy
   m_TagString: Enemy
@@ -84,20 +84,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &9218546304206367418
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4316639743891968771}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: 3a9857ff38f5efa41ae3ff3ff643f2bd, type: 3}
 --- !u!54 &-5205467080939314246
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -165,3 +151,17 @@ MonoBehaviour:
   currentTarget: {fileID: 0}
   redirectDelay: 1
   baseDamageDelayTime: 1
+--- !u!136 &5164636512593572574
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4316639743891968771}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.3
+  m_Height: 0.4007793
+  m_Direction: 1
+  m_Center: {x: 0.05610305, y: 0.015535615, z: 0.0000000037252903}

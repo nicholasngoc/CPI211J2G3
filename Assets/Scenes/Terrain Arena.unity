@@ -2259,7 +2259,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2f7d84f9a9057c4c95e3b5aec27f4b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  health: 250
 --- !u!65 &687452350
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2271,8 +2271,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 15, y: 10, z: 17}
-  m_Center: {x: -0.033100605, y: 5.071569, z: 1.0611095}
+  m_Size: {x: 17, y: 20, z: 17}
+  m_Center: {x: 0, y: 1, z: 1}
 --- !u!1001 &699615535
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5480,6 +5480,11 @@ PrefabInstance:
       propertyPath: playerDamage
       value: 
       objectReference: {fileID: 8300000, guid: f4d28976de615f546b31e5568020fcf5, type: 3}
+    - target: {fileID: 7010723150436418129, guid: cf334fad9a9591244b4be3e554bf59cf,
+        type: 3}
+      propertyPath: health
+      value: 25
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf334fad9a9591244b4be3e554bf59cf, type: 3}
 --- !u!1001 &1482710053
